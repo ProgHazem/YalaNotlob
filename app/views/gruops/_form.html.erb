@@ -1,0 +1,28 @@
+<div class="cont-form">
+  <%= form_for([@user,gruop]) do |f| %>
+    <% if gruop.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(gruop.errors.count, "error") %> prohibited this gruop from being saved:</h2>
+        <ul>
+        <% gruop.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control friendemail" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :user_id %>
+      <%= f.text_field :user_id, class: "form-control friendemail" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Create", class: "btn btn-success friend-head-add" %>
+    </div>
+  <% end %>
+</div>

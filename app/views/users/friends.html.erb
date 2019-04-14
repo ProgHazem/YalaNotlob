@@ -1,0 +1,54 @@
+
+  <strong>Friends</strong>
+
+  <%=form_tag "addFriend", :method => "POST" do %>
+  Your Friend Email
+  <%= text_field_tag :email,"", class: "form-control friendemail" %>
+
+  <%= submit_tag "Add Friend",  class: "btn btn-primary" %>
+<% end %>
+
+
+<div id="friend_list" >
+  <h3>Accepted Friends</h3>
+  <table class="table table-bordered table-hover table-responsive">
+
+      <tr>
+        <th>Friend Name</th>
+        <th>Friend Image</th>
+        <th>Friend Remove</th>
+      </tr>
+
+      <% @user.friends.each do |friend| %>
+        <tr>
+          <td><%= friend.name %></td>
+          <td><%= image_tag friend.avatar.url(:medium) %></td>
+          <td><%= link_to 'Remove friend', "removeFriend/#{friend.id}", class: "btn btn-danger"  %></td>
+
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div id="friend_list" >
+
+<h3>Pending Friends</h3>
+<table class="table table-bordered table-hover table-responsive">
+
+      <tr>
+        <th>Friend Name</th>
+        <th>Friend Image</th>
+        <th colspan="2">Options</th>
+      </tr>
+<% @user.pending_friends.each do |friend| %>
+     <tr>
+       <td><%= friend.name %></td>s
+       <td><%= friend.email %></td>
+
+       <td><%= link_to 'Accept', "acceptFriend/#{friend.id}" , class: "btn btn-success" %></td>
+       <td><%= link_to 'Decline', "declineFriend/#{friend.id}, :method => :delete", class: "btn btn-danger" %></td>
+     </tr>
+   <% end %>
+  </table>
+</div>

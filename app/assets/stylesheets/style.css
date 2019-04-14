@@ -1,0 +1,182 @@
+
+.register{
+	margin: 40px auto;
+
+}
+.navbar{
+	margin: 0;
+	padding: 0;
+}
+.container ul{
+	list-style: none;
+}
+.container li{
+	display: inline-block;
+}
+.container li a{
+	color: blue;
+	font-size: 20px;
+	margin: 20px;
+}
+table{
+	border: 1px solid #ccc;
+}
+tr,td{
+	border: 1px solid #ccc;
+	padding: 10px;
+}
+.file{
+	margin: 20px auto;
+}
+.login{
+	margin: auto;
+    padding: 1cm;
+    text-align: left;
+    background-color: #1e675d;
+	color: #ffffff;
+	opacity: 0.8;
+    font-size: 22px;
+	font-size: 22px;
+}
+.login:hover
+{
+	opacity: 1;
+}
+
+.notificator
+{
+	margin-top: 30px !important;
+}
+
+.notificator a
+{
+	color: blue !important;
+}
+
+.navbar-inverse
+{
+	background-color: #524848 !important;
+	border-color: #524848 !important;
+}
+.navbar{
+	margin: 0;
+	padding: 0;
+}
+
+.option
+{
+	margin: 5px;
+	padding: 15px;
+}
+.option p {
+	margin: 10px !important;
+    font-size: 30px;
+	font-weight: bold;
+}
+.btn-success {
+	font-size: 14px !important; 
+}
+.option .btn-danger, .btn-success {
+	width: 50% !important;
+	margin-bottom: 10px;
+	font-size: 22px;
+} 
+.btn-sign-up {
+	background-color: #0056a0;
+	width: 50% !important;
+	border-color: #2e6da4;
+	font-size: 22px;
+	margin-bottom: 10px;
+
+}
+.btn-face {
+	background-color: #004082;
+	font-size: 22px;
+	width: 50% !important;
+	border-color: #2e6da4;
+	margin-bottom: 10px;
+
+}
+
+#friend_list
+{
+	/* background-color: #CAFFD4; */
+    padding: 20px;
+    margin-top: 30px;
+
+}
+.friend-head
+{
+	font-size: 40px;
+	color: #009944;
+	font-family: 'Courier New', Courier, monospace;
+	text-align: center;
+}
+.cont-form
+{
+	border: 2px solid #ccc !important;
+	margin: 5px;
+	padding: 15px;
+
+}
+.form {
+	font-size: 20px;
+	border: 1px soild #ccc;
+	padding: 15px;
+}
+.friendemail
+{
+	width: 50%;
+	margin: 20px 0px;
+}
+.friend-head-add {
+	width: 50%;
+}
+#friend_list {
+	border: 2px solid #ccc !important;
+}
+#friend_list table caption {
+	text-align: center !important;
+	font-size: 30px;
+	padding: 10px;
+	margin-bottom: 15px;
+}
+#friend_list hr{
+	border: none;
+	border-width: 3px !important;
+	border-style: dashed;
+}
+
+.back-group-create
+{
+	margin: 5px;
+    width: 200px;
+    font-size: 20px;
+    height: 40px;
+}
+
+.group-name
+{
+	font-size: 20px;
+	border: 1px solid #333333;
+	padding: 20px;
+	margin-bottom: 10px;
+	font-family: 'Courier New', Courier, monospace;
+}
+.group-name strong{
+	font-size: 30px;
+}
+.group-name span {
+	border-radius: 40%;
+    padding: 6px;
+	background-color: rgb(160, 118, 143);
+}
+
+label {
+	font-size: 15px;
+	font-family: 'Courier New', Courier, monospace;
+}
+
+a {
+	color: #fff !important;
+}

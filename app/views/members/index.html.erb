@@ -1,0 +1,26 @@
+  <h1 class="alert-heading friend-head">Members</h1>
+  <table class="table table-bordered table-hover table-responsive">
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Gruop</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @members.each do |member| %>
+      <tr>
+        <td><%= member.user %></td>
+        <td><%= member.gruop %></td>
+        <td><%= link_to 'Show', user_gruop_member_path(@user,@gruop,member), class: "btn btn-primary" %></td>
+        <td><%= link_to 'Edit', edit_user_gruop_member_path(@user,@gruop,member), class: "btn btn-success" %></td>
+        <td><%= link_to 'Destroy', user_gruop_member_path(@user,@gruop,member), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Member', new_user_gruop_member_path, class: "btn btn-primary" %>

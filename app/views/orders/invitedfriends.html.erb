@@ -1,0 +1,28 @@
+<h1>invitedfriends</h1>
+
+
+
+<div>
+  <table class="table table-bordered table-hover table-responsive">
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Avatar</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ordermembers.each do |ordermember| %>
+    <%if ordermember.user != @user %>
+      <tr>
+        <td><%= ordermember.user.name %></td>
+        <td><%= image_tag ordermember.user.avatar.url(:medium) %></td>
+      </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+<br>
+
+<%= link_to 'Back', user_order_path(@order.user,@order), class: "btn btn-danger" %>
+</div>

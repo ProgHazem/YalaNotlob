@@ -1,0 +1,66 @@
+<p class="group-name">
+  <strong>Name:</strong>
+  <span><%= @gruop.name %></span>
+  <%= link_to 'Edit', user_gruop_path(@user,@gruop) , class: "btn btn-primary" %> 
+  <%= link_to 'Back', user_gruops_path,class: "btn btn-danger" %>
+</p>
+
+<p style="display: none">
+  <strong>User:</strong>
+  <%= @gruop.user %>
+</p>
+
+<h1>Members inside this Group</h1>
+<table class="table table-bordered table-hover table-responsive">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th colspan="3">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @gruop.members.each do |member| %>
+    <tr>
+      <td><%= member.id %></td>
+      <td><%= member.user.name %></td>
+      <td><%= member.user.email %></td>
+      <td><%= link_to 'Remove from group', user_gruop_member_path(member.user,@gruop,member) , method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-danger" %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<h1>Members outside this Group</h1>
+<table class="table table-bordered table-hover table-responsive">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th colspan="3">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% arr=[] %>
+    <% @gruop.members.each do  |member| %>
+      <% arr.push(member.user_id) %>
+    <% end %>
+<% @user.friends.each do |user| %>
+  <% if !arr.include?(user.id) %>
+            <tr>
+      	<td><%= user.id %></td>
+              <td><%= user.name %></td>
+              <td><%= user.email %></td>
+      <%= form_for([@user,@gruop,Member.new], :method => :post, :class => "linkForm") do |f| %>
+            <%= f.hidden_field :user_id, :value => "#{user.id}" %>
+            <%= f.hidden_field :group_id, :value =>"#{@gruop.id}" %>
+            <td><%= f.submit 'add to group',class:"btn btn-success" %></td>
+          <% end %>
+     
+            </tr>
+  <% end %>
+
+<% end %>
+  </tbody>
+</table>
